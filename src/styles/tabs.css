@@ -1,0 +1,38 @@
+.tabs {
+  @apply w-full;
+
+  .tabs-links {
+    @apply flex gap-2;
+  }
+
+  .tab {
+    @apply px-4 py-2 rounded-md text-sm font-medium
+           text-muted-foreground hover:bg-muted transition;
+  }
+
+  .tab.active {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  &.horizontal {
+    .tabs-links {
+      @apply border-b pb-2;
+    }
+  }
+
+  &.vertical {
+    @apply flex gap-4;
+
+    .tabs-links {
+      @apply flex-col min-w-[180px] border-r pr-3;
+    }
+
+    .tabs-content {
+      @apply flex-1;
+    }
+
+    .tab {
+      @apply text-left w-full;
+    }
+  }
+}

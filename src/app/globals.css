@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "../styles/index.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -47,6 +48,8 @@
 }
 
 :root {
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
