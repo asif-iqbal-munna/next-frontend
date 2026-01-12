@@ -12,8 +12,8 @@ const navItems = [
     label: "Home",
   },
   {
-    href: "/client-data-fetching-rc",
-    label: "Client Data Fetching",
+    href: "/data-fetching",
+    label: "Data Fetching",
   },
 ];
 
