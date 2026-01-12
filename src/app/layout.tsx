@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "../components/blocks/Header";
 import Footer from "../components/blocks/Footer";
+import AppProviders from "../components/providers/AppProviders";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -33,11 +34,13 @@ export default function RootLayout({
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
         suppressHydrationWarning
       >
-        <div className="min-h-screen flex flex-col">
-          <Header />
-          <main className="flex-1 p-6">{children}</main>
-          <Footer />
-        </div>
+        <AppProviders>
+          <div className="min-h-screen flex flex-col">
+            <Header />
+            <main className="flex-1 p-6">{children}</main>
+            <Footer />
+          </div>
+        </AppProviders>
       </body>
     </html>
   );

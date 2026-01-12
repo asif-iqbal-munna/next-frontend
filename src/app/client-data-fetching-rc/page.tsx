@@ -1,6 +1,6 @@
 "use client";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useState } from "react";
+import ClientData from "./_libs/views/ClientData";
 
 const ClientDataFetching = () => {
   const [activeTab, setActiveTab] = useState<string>("tab-1");
@@ -27,7 +27,9 @@ const ClientDataFetching = () => {
             Tab 3
           </div>
         </div>
-        <div className="tabs-content"></div>
+        <div className="tabs-content">
+          {activeTab === "tab-1" && <ClientData />}
+        </div>
       </div>
     </div>
   );

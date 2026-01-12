@@ -9,7 +9,7 @@ export function useAppQuery<T>({
   url,
   filters,
   enabled = true,
-  staleTime = 60_000,
+  staleTime = 60000, // 1 minute
 }: {
   key: string;
   url: string;
