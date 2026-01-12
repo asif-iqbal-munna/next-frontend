@@ -1,4 +1,4 @@
-import { User } from "../../../../type/user.types";
+import { User } from "../../../../../type/user.types";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import dayjs from "dayjs";

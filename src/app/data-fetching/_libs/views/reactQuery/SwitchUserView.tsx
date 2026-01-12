@@ -1,5 +1,5 @@
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
-import { ViewType } from "../../../../type/general.types";
+import { ViewType } from "../../../../../type/general.types";
 
 type SwitchViewProps = {
   view: ViewType;

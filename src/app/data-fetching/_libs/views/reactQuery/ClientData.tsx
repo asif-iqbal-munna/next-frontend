@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { ViewType } from "../../../../type/general.types";
-import { useGetUser } from "../../../../service/apiHooks/useUserApi";
+import { ViewType } from "../../../../../type/general.types";
+import { useGetUser } from "../../../../../service/apiHooks/useUserApi";
 
 import TableUserData from "./TableUserData";
 import CardUserData from "./CardUserData";

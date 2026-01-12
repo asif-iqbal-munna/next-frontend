@@ -1,9 +1,3 @@
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from "@/components/ui/navigation-menu";
 import Link from "next/link";
 
 const navItems = [
@@ -15,6 +9,10 @@ const navItems = [
     href: "/data-fetching",
     label: "Data Fetching",
   },
+  {
+    href: "/next-isr",
+    label: "Next ISR",
+  },
 ];
 
 const Header = () => {
@@ -22,10 +20,6 @@ const Header = () => {
     <nav className="sticky top-0 z-50 glass bg-amber-50 border-b">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex justify-between items-center">
-          {/* <a href="#" className="text-2xl font-bold text-primary">
-            A.I.M
-          </a> */}
-          {/* Desktop Menu */}
           <div className="flex gap-8">
             {navItems.map((item) => (
               <Link
