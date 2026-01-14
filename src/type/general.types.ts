@@ -18,9 +18,16 @@ export interface PaginationMeta {
   pages: number;
 }
 
+export interface MetaData {
+  total: number;
+}
 export interface PaginatedResponse<T> {
   data: T[];
   pagination: PaginationMeta;
+}
+export interface MetaResponse<T> {
+  data: T[];
+  meta: MetaData;
 }
 
 export type ServerFetchOptions = {

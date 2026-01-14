@@ -13,6 +13,14 @@ const navItems = [
     href: "/next-isr",
     label: "Next ISR",
   },
+  {
+    href: "/load-bulk-products",
+    label: "Server Render & Search 20k Data",
+  },
+  {
+    href: "/client-load-bulk-products",
+    label: "Client Render & Search 20k Data",
+  },
 ];
 
 const Header = () => {
