@@ -15,11 +15,11 @@ const navItems = [
   },
   {
     href: "/load-bulk-products",
-    label: "Server Render & Search 20k Data",
+    label: "Server Data & Search 20k Data",
   },
   {
     href: "/client-load-bulk-products",
-    label: "Client Render & Search 20k Data",
+    label: "Client Data & Search 20k Data",
   },
 ];
 
