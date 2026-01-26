@@ -1,6 +1,7 @@
 "use client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import React from "react";
+import { Toaster } from "sonner";
 
 const AppProviders = ({
   children,
@@ -17,7 +18,10 @@ const AppProviders = ({
     },
   });
   return (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    <QueryClientProvider client={queryClient}>
+      {children}
+      <Toaster richColors position="top-center" />
+    </QueryClientProvider>
   );
 };
 

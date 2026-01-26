@@ -10,15 +10,24 @@ export async function serverFetch<T = unknown>({
   params,
   method = "GET",
   body,
-}: ServerFetchOptions & { method?: string; body?: any }): Promise<T | null> {
+  idempotencyKey
+}: ServerFetchOptions): Promise<T | null> {
   const query = params
     ? "?" + new URLSearchParams(params as Record<string, string>).toString()
     : "";
   const endpoint = `${process.env.NEXT_PUBLIC_API_BASE_URL}/${url}${query}`;
 
+  const headers: Record<string, string> = {
+    "Content-Type": "application/json",
+  };
+
+  if (idempotencyKey && ["POST", "PUT", "PATCH", "DELETE"].includes(method)) {
+    headers["idempotency-key"] = idempotencyKey;
+  }
+
   const fetchOptions: RequestInit & { next?: any } = {
     method,
-    headers: { "Content-Type": "application/json" },
+    headers,
   };
 
   if (body) fetchOptions.body = JSON.stringify(body);
@@ -61,6 +70,6 @@ export async function serverFetch<T = unknown>({
       }`
     );
 
-    return null;
+    throw error;
   }
 }

@@ -1,41 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-/* 
-  
-  // Inside useOptimizedSearch.ts - The Sorting Logic
-const filteredAndSorted = useMemo(() => {
-  if (!query) return data;
-  
-  const terms = query.toLowerCase().trim().split(/\s+/); // Split by spaces
-
-  const matches = searchableData.filter((item) => {
-    // Ensure EVERY term in the query is found somewhere in the search string
-    return terms.every(term => item._searchString.includes(term));
-  });
-
-  return matches.sort((a, b) => {
-    const calculateScore = (primary: string) => {
-      let score = 0;
-      const words = primary.split(/\s+/);
-
-      terms.forEach(term => {
-        // 1. Highest: Primary field starts exactly with the term
-        if (primary.startsWith(term)) score += 10;
-        
-        // 2. High: One of the words in the primary field starts with the term
-        else if (words.some(word => word.startsWith(term))) score += 5;
-        
-        // 3. Normal: Term is just contained within the string
-        else score += 1;
-      });
-      return score;
-    };
-
-    return calculateScore(b._primaryField) - calculateScore(a._primaryField);
-  });
-}, [query, searchableData, data]);
-  */
-
 import { useMemo, useState, useTransition } from "react";
 
 export function useOptimizedSearch<T, K extends keyof T>(

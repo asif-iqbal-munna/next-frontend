@@ -36,4 +36,7 @@ export type ServerFetchOptions = {
   revalidate?: number;
   tags?: string[];
   params?: Record<string, any>;
+  method?: string,
+  body?: any,
+  idempotencyKey?: string
 };

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { IProduct } from "../../../../type/product.types";
-// import { exportToCSV } from "@/utils/csv-export";
+import { exportProductsToCSV } from "../../../../utils/productCsvExport";
 
 const ProductFilter = ({
   filteredProducts,
@@ -32,7 +32,10 @@ const ProductFilter = ({
             </div>
           )}
         </div>
-        <button className="h-9 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-md text-sm font-bold transition-colors">
+        <button
+          onClick={() => exportProductsToCSV(filteredProducts)}
+          className="h-9 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-md text-sm font-bold transition-colors"
+        >
           Export
         </button>
       </div>
