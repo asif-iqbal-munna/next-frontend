@@ -5,11 +5,12 @@ import { useGetUser } from "../../../../../service/apiHooks/useUserApi";
 import TableUserData from "./TableUserData";
 import CardUserData from "./CardUserData";
 import SwitchUserView from "./SwitchUserView";
+import TableSkeleton from "../../../../../components/skeletons/TableSkeleton";
 
 export default function UserManagement() {
   const [view, setView] = useState<ViewType>("table");
 
-  const { data } = useGetUser();
+  const { data, isLoading } = useGetUser();
 
   const users = data?.data ?? [];
 
@@ -23,9 +24,16 @@ export default function UserManagement() {
         />
       </div>
 
-      {view === "table" && <TableUserData users={users} />}
+      {isLoading ?
+        <TableSkeleton columns={3} rows={13} />
+      :
+        <>
+          {view === "table" && <TableUserData users={users} />}
 
-      {view === "card" && <CardUserData users={users} />}
+          {view === "card" && <CardUserData users={users} />}
+        </>
+      }
+
     </div>
   );
 }

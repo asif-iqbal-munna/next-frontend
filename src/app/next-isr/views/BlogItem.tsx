@@ -10,6 +10,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { BlogActions } from "./BlogActions";
+import BlogFeaturedAction from "./BlogFeaturedAction";
 
 interface BlogCardProps {
   post: BlogPost;
@@ -51,7 +52,7 @@ export const BlogItem = ({ post }: BlogCardProps) => {
         </CardContent>
       )}
 
-      {/* Footer: Actions + Date + Read More */}
+      {/* Footer: Date + Featured Toggle + Read More */}
       <CardFooter className="flex justify-between items-center">
         <div className="flex items-center gap-3">
           <div className="flex flex-col text-xs text-gray-500 dark:text-gray-400">
@@ -61,9 +62,13 @@ export const BlogItem = ({ post }: BlogCardProps) => {
           </div>
         </div>
 
-        <Button variant="link" size="sm" asChild>
-          <a href={`/blog/${post.slug}`}>Read more →</a>
-        </Button>
+        <div className="flex items-center gap-2">
+         <BlogFeaturedAction post={post} />
+
+          <Button variant="link" size="sm" asChild>
+            <a href={`/blog/${post.slug}`}>Read more →</a>
+          </Button>
+        </div>
       </CardFooter>
     </Card>
   );

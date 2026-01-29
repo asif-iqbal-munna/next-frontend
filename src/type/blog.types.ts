@@ -9,6 +9,7 @@ export interface BlogPost {
   metaDescription?: string;
   tags?: string[];
   published: boolean;
+  featured?: boolean;
   publishedAt?: Date;
   createdAt: Date;
 }

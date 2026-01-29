@@ -3,7 +3,7 @@ import Link from "next/link";
 const navItems = [
   {
     href: "/",
-    label: "Home",
+    label: "Home SSG",
   },
   {
     href: "/data-fetching",
@@ -20,6 +20,10 @@ const navItems = [
   {
     href: "/client-load-bulk-products",
     label: "Client & Search 20k Data",
+  },
+  {
+    href: "/multi-step-form",
+    label: "Form",
   },
 ];
 
