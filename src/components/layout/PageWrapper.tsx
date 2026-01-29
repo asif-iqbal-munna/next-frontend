@@ -8,7 +8,7 @@ interface PageWrapperProps {
   className?: string;
 }
 
-export const PageWrapper: React.FC<PageWrapperProps> = ({ children, className = "" }) => {
+const PageWrapper: React.FC<PageWrapperProps> = ({ children, className = "" }) => {
   return (
     <ErrorBoundary>
       <div className={className}>
