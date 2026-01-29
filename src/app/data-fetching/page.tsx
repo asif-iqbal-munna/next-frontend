@@ -43,7 +43,7 @@ const ClientDataFetching = () => {
               variant="outline"
               className="border-yellow-300 text-yellow-700 hover:bg-yellow-100"
             >
-              🎲 Generate Error
+              🎲 Trigger Error
             </Button>
             <p className="text-xs text-yellow-600">
               ⚠️ About 50% chance of error (negative numbers) vs success (positive numbers)
